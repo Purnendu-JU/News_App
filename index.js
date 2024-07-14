@@ -9,13 +9,7 @@ async function main() {
 main();
 const app = express();
 const port = 5000;
-app.use(cors(
-  {
-    origin: ["https://newsapp-iota-fawn.vercel.app"],
-    methods: ["POST", "GET"],
-    credentials: true
-  }
-));
+app.use(cors());
 app.use(express.json());
 app.use('/api/auth', require('./routes/auth'));
 app.listen(port, () => {
